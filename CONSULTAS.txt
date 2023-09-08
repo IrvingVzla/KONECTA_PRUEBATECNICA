@@ -1,0 +1,12 @@
+----Permite conocer cuales son los productos que más stock tiene ----
+
+SELECT "NombreProducto", "Stock"
+FROM public."Productos"
+ORDER BY "Stock" DESC
+
+--- Permite conocer cuál es el producto más vendido ---
+
+SELECT "NombreProducto", SUM("Cantidad") AS "TotalVendido"
+FROM public."VentasProductos"
+GROUP BY "NombreProducto"
+ORDER BY "TotalVendido" DESC
